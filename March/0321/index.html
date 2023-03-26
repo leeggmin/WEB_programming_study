@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <form name="form1" action="" method="post">
+      <input
+        type="button"
+        value="공지 창 열기"
+        onclick="window.open('../0316/index.html')"
+      /><br />
+      <input type="file" name="" id="" /><br />
+      <input type="hidden" name="사이트를 통한 직접 로그인" />
+      아이디 :
+      <input
+        type="text"
+        id="user_id"
+        autofocus
+        placeholder="아이디를 입력하세요"
+      />
+      비밀번호 :
+      <input
+        type="password"
+        id="user_pw"
+        placeholder="비밀번호를 입력하세요"
+        required
+      />
+      <input type="submit" value="로그인" /><br />
+      메모 <textarea name="memo" id="" cols="30" rows="4"></textarea>
+    </form>
+    <select name="namename" id="idid">
+      <option value="값1">내용1</option>
+      <option value="값2">내용2</option>
+    </select>
+    <input type="text" list="dataList" />
+    <datalist id="dataList">
+      <option value="서버 값1">선택 옵션1</option>
+      <option value="서버 값2">선택 옵션2</option>
+    </datalist>
+    <input type="button" onclick="alert(form1.user_id.value)" />
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <form action="" method="post">
+      <fieldset>
+        <legend>필수</legend>
+        아이디 <input type="text" id="id" /> 비밀번호
+        <input type="password" id="pw" />
+        <input type="submit" value="로그인" /><br />
+        이름 <input type="text" id="name" /><br />
+        이메일 <input type="email" id="email" /><br />
+        연락처 <input type="tel" id="number" /><br />
+        생년월일 <input type="date" id="birth" />
+        <input type="month" />
+        <input type="week" />
+      </fieldset>
+      <fieldset>
+        <legend>선택</legend>
+        성별 :
+        <input type="radio" name="x" id="gender" value="w" />여자
+        <input type="radio" name="x" id="gender2" value="m" />남자
+        <br />
+        관심분야 :
+        <input type="checkbox" value="front" id="tag" />프론트엔드
+        <input type="checkbox" value="back" id="tag" />백엔드
+        <input type="checkbox" value="full" id="tag" />풀스택
+        <br />
+        나이 :
+        <input type="number" min="10" max="100" value="10" id="age" />
+        <br />
+        발 사이즈 :
+        <input type="range" min="100" max="300" value="0" id="foot" />
+      </fieldset>
+      <input type="reset" />
+      <input type="button" id="btn1" value="회원가입" />
+      <input
+        type="button"
+        id="btn2"
+        value="아이디보기"
+        onclick="alert(document.getElementById('id').value)"
+      />
+      <input
+        type="button"
+        id="btn3"
+        value="이메일보기"
+        onclick="alert(document.getElementById('email').value)"
+      />
+      <input
+        type="button"
+        id="btn4"
+        value="연락처보기"
+        onclick="alert(document.getElementById('numbaer').value)"
+      />
+      <input
+        type="button"
+        id="btn5"
+        value="생년월일보기"
+        onclick="alert(document.getElementById('date').value)"
+      />
+      <input
+        type="button"
+        id="btn6"
+        value="성별보기"
+        onclick="alert(document.getElementById('gender').value)"
+      />
+      <input
+        type="button"
+        id="btn7"
+        value="관심분야보기"
+        onclick="alert(document.getElementById('tag').value)"
+      />
+      <input
+        type="button"
+        id="btn8"
+        value="나이보기"
+        onclick="alert(document.getElementById('age').value)"
+      />
+      <input
+        type="button"
+        id="btn9"
+        value="발사이즈"
+        onclick="alert(document.getElementById('foot').value)"
+      />
+    </form>
+  </body>
+</html>

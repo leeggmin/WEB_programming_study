@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 1;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <form name="form1">
+        <table>
+          <tr>
+            <th colspan="2">신상정보</th>
+          </tr>
+          <tr>
+            <th>구분</th>
+            <th>내용</th>
+          </tr>
+          <tr>
+            <th>*이름</th>
+            <th>
+              <input type="text" name="name" id="name" />
+            </th>
+          </tr>
+          <tr>
+            <th>*사진</th>
+            <th>
+              <input type="file" name="picture" id="picture" />
+            </th>
+          </tr>
+          <tr>
+            <th>*아이디</th>
+            <th>
+              <input
+                type="text"
+                name="id"
+                id="id"
+                placeholder="아이디는 8글자 이상입니다"
+              />
+            </th>
+          </tr>
+          <tr>
+            <th>*비밀번호</th>
+            <th>
+              <input
+                type="password"
+                name="pw"
+                id="pw"
+                placeholder="대소문자와 숫자, 특수문자를 적어도 하나씩은 사용해야 합니다."
+              />
+            </th>
+          </tr>
+          <tr>
+            <th>*비밀번호확인</th>
+            <th>
+              <input type="password" name="pw_ckeck" id="pw_ckeck" />
+            </th>
+          </tr>
+          <tr>
+            <th>이메일</th>
+            <th>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="@를 포함한 주소를 입력하세요."
+              />
+            </th>
+          </tr>
+          <tr>
+            <th>*생년월일</th>
+            <th>
+              <input type="date" name="birth" id="birth" />
+            </th>
+          </tr>
+          <tr>
+            <th>*성별</th>
+            <th>
+              <input type="radio" name="gender" value="m" checked />남자
+              <input type="radio" name="gender" value="w" />여자
+            </th>
+          </tr>
+          <tr>
+            <th>*연락처1</th>
+            <th>
+              <input type="tel" name="phone" id="phone" />
+            </th>
+          </tr>
+          <tr>
+            <th>*주소</th>
+            <th>
+              우편번호 :
+              <input type="text" name="home_num" id="home_num" /><br />
+              도로명 주소 :
+              <input type="text" name="street" id="street" /><br />
+              상세주소 :
+              <input type="text" name="address" id="address" />
+            </th>
+          </tr>
+          <tr>
+            <th>가입경로</th>
+            <th>
+              <input type="text" list="route" />
+              <datalist id="route">
+                <option value="지인">지인</option>
+                <option value="SNS">SNS</option>
+                <option value="검색">검색</option>
+              </datalist>
+            </th>
+          </tr>
+          <tr>
+            <th>취미</th>
+            <th>
+              <select name="hobby" id="hobby" multiple size="3">
+                <option value="basketball">농구</option>
+                <option value="volleyball">배구</option>
+                <option value="soccer">축구</option>
+              </select>
+            </th>
+          </tr>
+          <tr>
+            <th>관심 분야</th>
+            <th>
+              <input type="checkbox" value="HTML" id="tag" />HTML
+              <input type="checkbox" value="CSS" id="tag" checked />CSS
+              <input type="checkbox" value="trJavaciptip" id="tag" />Javacipt
+            </th>
+          </tr>
+          <tr>
+            <th>이메일 수신여부</th>
+            <th>
+              <input type="radio" name="sub" value="yes" checked />예
+              <input type="radio" name="sub" value="no" />아니요
+            </th>
+          </tr>
+          <tr>
+            <th>하고싶은말</th>
+            <th>
+              <textarea name="intro" id="intro" cols="50" rows="5"></textarea>
+            </th>
+          </tr>
+          <br />
+          <tr>
+            <th colspan="2">
+              <input type="submit" value="전송" />
+              <input type="reset" value="reset" />
+            </th>
+          </tr>
+          <tr>
+            <th colspan="2">
+              <input
+                type="button"
+                value="아이디"
+                onclick="alert(form1.id.value)"
+              />
+              <input
+                type="button"
+                value="생년월일"
+                onclick="alert(form1.birth.value)"
+              />
+              <input
+                type="button"
+                value="이메일"
+                onclick="alert(form1.email.value)"
+              />
+              <input
+                type="button"
+                value="연락처"
+                onclick="alert(form1.phone.value)"
+              />
+            </th>
+          </tr>
+        </table>
+      </form>
+      <br />
+      <br />
+      <table>
+        <tr>
+          <th colspan="2" rowspan="2">기본사항</th>
+          <th colspan="3">회사명</th>
+          <th colspan="3">업종별</th>
+          <th>정리 No.</th>
+        </tr>
+        <tr>
+          <th colspan="3">&nbsp;</th>
+          <th colspan="3">&nbsp;</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>년도</th>
+          <th>자본금</th>
+          <th>종업원수</th>
+          <th>매출액</th>
+          <th>이익</th>
+          <th>관련품매출</th>
+          <th>당사분매출</th>
+          <th>당사품종</th>
+        </tr>
+        <tr>
+          <th rowspan="4">업적</th>
+          <th>년( 월까지)</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+        <tr>
+          <th>년( 월까지)</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+        <tr>
+          <th>년( 월까지)</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+        <tr>
+          <th>년( 월까지)</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+        <tr>
+          <th rowspan="8">&nbsp;</th>
+          <th colspan="2">대표자성명</th>
+          <th colspan="2" rowspan="8">&nbsp;</th>
+          <th colspan="2">항목</th>
+          <th>관리자</th>
+          <th>담당자</th>
+        </tr>
+        <tr>
+          <th colspan="2">본사소재지</th>
+          <th colspan="2">성명</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+        <tr>
+          <th colspan="2">본사전화</th>
+          <th colspan="2">생년월일</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+        <tr>
+          <th colspan="2">공장소재지</th>
+          <th colspan="2">주소</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+        <tr>
+          <th colspan="2">공장전화</th>
+          <th colspan="2">출신지</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+        <tr>
+          <th colspan="2">창업·설립</th>
+          <th colspan="2">학력</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+        <tr>
+          <th colspan="2">결산기</th>
+          <th colspan="2">이력</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+        <tr>
+          <th colspan="2">주주구성</th>
+          <th colspan="2">전화</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+      </table>
+    </center>
+  </body>
+</html>
