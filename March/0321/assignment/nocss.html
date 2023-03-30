@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <form name="form1" id="form1" method="get" action="/test">
+      <table width="100%" border="1">
+        <tr>
+          <th colspan="2" bgcolor="purple">회원기본정보</th>
+        </tr>
+        <tr>
+          <th bgcolor="purple"><em>아이디</em></th>
+          <td>
+            <input
+              type="text"
+              id="user_id"
+              size="30"
+              maxlength="30"
+              autofocus
+              required
+            />
+            4~12자의 영문 대소문자와 숫자로만 입력
+          </td>
+        </tr>
+        <tr>
+          <th bgcolor="purple"><em>비밀번호</em></th>
+          <td>
+            <input
+              type="password"
+              id="user_pw"
+              placeholder="4~12자의 영문 대소문자와 숫자로만 입력"
+              size="30"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <th bgcolor="purple"><em>비밀번호확인</em></th>
+          <td>
+            <input
+              type="password"
+              id="user_pw_check"
+              placeholder="4~12자의 영문 대소문자와 숫자로만 입력"
+              size="30"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <th bgcolor="purple">메일주소</th>
+          <td>
+            <input type="text" id="email" size="30" maxlength="30" />
+            <input
+              type="text"
+              id="domain"
+              readonly
+              value="@domain.com"
+              size="30"
+              maxlength="30"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th bgcolor="purple">연락처</th>
+          <td>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="하이픈(-)을 빼고 입력해주세요"
+              size="30"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th bgcolor="purple">수신여부</th>
+          <td>
+            <input type="radio" name="sub" id="yes" value="yes" />수신
+            <input type="radio" name="sub" id="no" value="no" checked />수신거부
+          </td>
+        </tr>
+        <tr>
+          <th bgcolor="purple">이름</th>
+          <td><input type="text" id="name" size="30" maxlength="30" /></td>
+        </tr>
+      </table>
+      <br />
+      <table width="100%" border="1">
+        <tr>
+          <th colspan="4" bgcolor="purple">개인신상정보</th>
+        </tr>
+        <tr>
+          <th bgcolor="purple">주민등록번호</th>
+          <td id="pad">
+            <input type="text" id="human_number" size="30" maxlength="30" /> 예
+            1234561234567
+          </td>
+          <th bgcolor="purple">생일</th>
+          <td id="pad">
+            <select name="year" id="year">
+              <option value="2004">2004</option>
+              <option value="2005">2005</option>
+              <option value="2006">2006</option>
+            </select>
+            년
+            <select name="month" id="month">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            월
+            <select name="day" id="day">
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+            </select>
+            일
+          </td>
+        </tr>
+        <tr>
+          <th bgcolor="purple">가족수</th>
+          <td id="pad">
+            <input
+              type="number"
+              name="family"
+              id="family"
+              min="1"
+              max="10"
+              width="55px"
+            />
+          </td>
+          <th bgcolor="purple">미팅일자</th>
+          <td id="pad">
+            <input type="date" name="" id="" min="2023-03-22" max="" />
+          </td>
+        </tr>
+        <tr>
+          <th bgcolor="purple">가입경로</th>
+          <td id="pad">
+            <input type="text" list="route" />
+            <datalist id="route">
+              <option value="google">google</option>
+              <option value="naver">naver</option>
+              <option value="instagram">instagram</option>
+            </datalist>
+          </td>
+          <th bgcolor="purple">관심분야</th>
+          <td id="pad">
+            <input type="checkbox" value="computer" id="tag" checked />컴퓨터
+            <input type="checkbox" value="internet" id="tag" />인터넷
+            <input type="checkbox" value="trip" id="tag" />여행
+            <input type="checkbox" value="movie" id="tag" />영화감상
+            <input type="checkbox" value="music" id="tag" />음악감상
+          </td>
+        </tr>
+        <tr>
+          <th bgcolor="purple">자기소개</th>
+          <td colspan="3" id="pad">
+            <textarea
+              name="intro"
+              id="intro"
+              maxlength="50"
+              rows="5"
+              cols="40"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <th bgcolor="purple">첨부파일</th>
+          <td colspan="3" id="pad">
+            <input type="file" name="add_file" id="add_file" /><br />
+          </td>
+        </tr>
+      </table>
+      <br />
+      <center>
+        <input type="hidden" id="hide" value="너무 귀찮다 ㅜㅜ" />
+        <input type="submit" value="회원가입" />
+        <input type="reset" value="다시입력" />
+        <a href="./join.html" target="_blank"
+          ><input type="button" value="팝업창열기"
+        /></a>
+        <input
+          type="button"
+          value="아이디알기"
+          onclick="alert(form1.user_id.value)"
+        />
+        <input type="button" value="메일주소로그남기기" />
+        <a href="img.html" target="_blank"
+          ><input type="button" value="이미지"
+        /></a>
+        <input type="button" value="완료" onclick="alert(form1.hide.value)" />
+      </center>
+    </form>
+  </body>
+</html>
