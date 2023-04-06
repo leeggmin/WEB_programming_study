@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+        border: 5px solid black;
+        display: inline-block;
+      }
+      #box1 {
+        border-style: dashed;
+        border-color: red red blue;
+        box-shadow: 2px -2px 5px 0px;
+      }
+      #box2 {
+        border-style: double;
+        border-color: blue;
+        box-shadow: 5px 5px 5px blue;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+      }
+      #box3 {
+        border-style: groove;
+      }
+      #box4 {
+        border-style: inset;
+      }
+      img {
+        border-style: ridge;
+        box-shadow: 5px 5px 5px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box1">박스모델1</div>
+    <div id="box2">박스모델2</div>
+    <div id="box3">박스모델3</div>
+    <div id="box4">박스모델4</div>
+    <br />
+    <img src="img/photo.jpg" alt="" />
+  </body>
+</html>
