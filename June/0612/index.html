@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>거래처 등록</h2>
+    <h3>* 항목은 필수 입력 입니다.</h3>
+    <form action="">
+      <table>
+        <tr>
+          <td>*</td>
+          <th>상호</th>
+          <td><input type="text" id="shopName" /></td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <th>사업자등록번호</th>
+          <td><input type="text" id="shopNumber" /></td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <th>대표전화</th>
+          <td><input type="tel" id="tel" /></td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <th>거래처ID</th>
+          <td><input type="text" id="id" /></td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <th>비밀번호</th>
+          <td><input type="password" id="pw" /></td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <th>비밀번호 확인</th>
+          <td><input type="password" id="pwCheck" /></td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <th>분류</th>
+          <td>
+            <select id="tag">
+              <option value="">==분류를 선택해주세요==</option>
+              <option value="1">대기업</option>
+              <option value="2">중소기업</option>
+              <option value="3">소상공인</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="3">
+            <button id="submitBtn">등록하기</button>
+            <button id="resetBtn">다시쓰기</button>
+          </th>
+        </tr>
+      </table>
+    </form>
+  </body>
+  <script>
+    const submitBtn = document.getElementById("submitBtn");
+    const resetBtn = document.getElementById("resetBtn");
+
+    const shopName = document.getElementById("shopName");
+    const shopNumber = document.getElementById("shopNumber");
+    const tel = document.getElementById("tel");
+    const id = document.getElementById("id");
+    const pw = document.getElementById("pw");
+    const pwCheck = document.getElementById("pwCheck");
+    const tag = document.getElementById("tag");
+
+    const checkAll = () => {
+      if (shopName.value === "") {
+        alert("상호를 다시 입력해주세요.");
+        shopName.focus();
+        return;
+      }
+
+      if (shopNumber.value === "") {
+        alert("사업자등록번호를 다시 입력해주세요.");
+        shopNumber.focus();
+        return;
+      }
+
+      if (tel.value === "") {
+        alert("대표전화를 다시 입력해주세요.");
+        tel.focus();
+        return;
+      }
+
+      if (id.value === "") {
+        alert("거래처ID를 다시 입력해주세요.");
+        id.focus();
+        return;
+      }
+
+      if (pw.value === "") {
+        alert("비밀번호를 다시 입력해주세요.");
+        pw.focus();
+        return;
+      }
+
+      if (pwCheck.value === "") {
+        alert("비밀번호 확인을 다시 입력해주세요.");
+        pwCheck.focus();
+        return;
+      }
+
+      if (tag.value === "") {
+        alert("분류를 다시 입력해주세요.");
+        tag.focus();
+        return;
+      }
+
+      return shopNumberCheck();
+    };
+
+    const shopNumberCheck = () => {
+      if (shopNumber.value.length !== 6) {
+        alert("사업자등록번호를 다시 입력해주세요.");
+        shopNumber.focus();
+        return;
+      }
+
+      return idCheck();
+    };
+
+    const idCheck = () => {
+      if (!isNaN(id.value.charAt(0))) {
+        alert("ID의 첫 글자는 숫자가 아니어야 합니다.");
+        id.focus();
+        return;
+      }
+
+      return passwordCheck();
+    };
+
+    const passwordCheck = () => {
+      if (pw.value !== pwCheck.value) {
+        alert("비밀번호와 비밀번호 확인은 같아야 합니다");
+        pwCheck.focus();
+        return;
+      }
+      return true;
+    };
+
+    submitBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      if (checkAll()) {
+        alert("등록성공");
+        shopName.value = "";
+        shopNumber.value = "";
+        tel.value = "";
+        id.value = "";
+        pw.value = "";
+        pwCheck.value = "";
+        tag.value = "";
+      }
+    });
+
+    resetBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      var inputs = document.getElementsByTagName("input");
+
+      for (var index = 0; index < inputs.length; index++) {
+        inputs[index].value = "";
+      }
+      tag.value = "";
+    });
+  </script>
+</html>
