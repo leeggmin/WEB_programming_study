@@ -1,5 +1,6 @@
 const addClass = document.getElementById("addClass");
 const div1 = document.getElementById("div1");
+const arrow = document.getElementById("arrow2");
 let isClick = false;
 
 addClass.addEventListener("click", () => {
@@ -79,12 +80,16 @@ addClass.addEventListener("click", () => {
 
     addClass.style.color = "#ededed";
     addClass.style.backgroundColor = "#4281f5";
+
+    arrow.style.opacity = "1";
   } else {
     const rmDiv = document.getElementById("newDiv");
     div1.removeChild(rmDiv);
 
     addClass.style.color = "";
     addClass.style.backgroundColor = "#ededed";
+
+    arrow.style.opacity = "0";
   }
 });
 
@@ -108,6 +113,30 @@ document.addEventListener("DOMContentLoaded", function () {
   top.addEventListener("click", function () {
     window.scrollTo({
       top: 0,
+      behavior: "smooth",
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("scroll", function () {
+    var scrollHeight = document.documentElement.scrollHeight;
+    var windowHeight = window.innerHeight;
+    var maxScroll = scrollHeight - windowHeight;
+    var currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll >= maxScroll) {
+      arrow.style.opacity = "0";
+    } else {
+      arrow.style.opacity = "1";
+    }
+  });
+
+  arrow.addEventListener("click", function () {
+    var scrollHeight = document.documentElement.scrollHeight;
+    window.scrollTo({
+      top: scrollHeight,
       behavior: "smooth",
     });
   });
