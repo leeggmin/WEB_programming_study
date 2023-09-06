@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        color: red;
+      }
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Cities</h1>
+      <ul>
+        <li id="one" class="red">Seoul</li>
+        <li id="two" class="red">London</li>
+        <li id="three" class="red">NewYork</li>
+        <li id="four">Tokyo</li>
+      </ul>
+    </div>
+    <script>
+      var loadFun = () => {
+        // const elem = document.getElementById("one");
+        // elem.className = "blue";
+        // const elem1 = document.getElementById("three");
+        // elem1.className = "blue";
+
+        const elems = document.getElementsByClassName("red");
+        const elems1 = document.getElementsByTagName("li");
+
+        // for (let i = 0; i < elems1.length; i++) {
+        //   elems[i].className = "blue";
+        // }
+
+        [...elems1].forEach((el) => (el.className = "blue")); //깊은복사
+      };
+      window.onload = loadFun;
+    </script>
+  </body>
+</html>

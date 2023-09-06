@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <button class="add">추가</button> <button class="rm">삭제</button>
+    <script>
+      const div = document.querySelector("#container");
+      if (div.hasChildNodes) {
+        [...div.children].forEach((el) => console.log(el.children[0].value));
+      }
+
+      const add = document.querySelector(".add");
+      const input = document.createElement("input");
+
+      function makeInput() {
+        div.appendChild(input);
+      }
+      add.onclick = makeInput();
+    </script>
+  </body>
+</html>

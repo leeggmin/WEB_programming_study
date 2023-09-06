@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Cities</h1>
+      <ul>
+        <li id="one" class="red">Seoul</li>
+        <li id="two" class="red">London</li>
+        <li id="three" class="red">NewYork</li>
+        <li id="four">Tokyo</li>
+      </ul>
+    </div>
+    <script>
+      var loadFun = () => {
+        const newElem = document.createElement("li");
+        const newText = document.createTextNode("Beijing");
+        newElem.appendChild(newText);
+        const parentElem = document.querySelector("ul");
+        parentElem.appendChild(newElem);
+      };
+      window.onload = loadFun;
+    </script>
+  </body>
+</html>
