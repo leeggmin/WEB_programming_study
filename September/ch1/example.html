@@ -6,21 +6,35 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="container"></div>
-    <button class="add">추가</button> <button class="rm">삭제</button>
+    <div id="txtContainer"></div>
+    <button class="btnOk">추가</button> <button class="btnShow">출력</button>
     <script>
-      const div = document.querySelector("#container");
-      if (div.hasChildNodes) {
-        [...div.children].forEach((el) => console.log(el.children[0].value));
+      function handleOkClick() {
+        var btnCount = 1;
+        return () => {
+          const container = document.getElementById("txtContainer");
+          const divData = document.getElementById("div");
+          const inputData = document.getElementById("input");
+          inputData.className = "input_data_" + btnCount;
+          divData.appendChild(inputData);
+          container.appendChild(divData);
+          btnCount++;
+        };
       }
 
-      const add = document.querySelector(".add");
-      const input = document.createElement("input");
-
-      function makeInput() {
-        div.appendChild(input);
+      function onLoadData() {
+        const btnOk = document.querySelector(".btnOk");
+        btnOk.onclick = handleOkClick();
+        const btnShow = document.querySelector(".btnShow");
+        btnShow.onclick = () => {
+          const alam = document.querySelector("#txtContainer");
+          if (alam.hasChildNodes) {
+            [...alam.children].forEach((el) =>
+              console.log(el.children[0].value)
+            );
+          }
+        };
       }
-      add.onclick = makeInput();
     </script>
   </body>
 </html>

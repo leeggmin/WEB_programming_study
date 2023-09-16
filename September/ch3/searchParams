@@ -1,0 +1,4 @@
+const dns = require("dns");
+dns.lookup("dgsw.hs.kr", (err, address, family) => {
+  console.log("ip : " + address);
+});
